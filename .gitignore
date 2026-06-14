@@ -1,0 +1,26 @@
+# Rust build output
+/target
+
+# Project data, paper sources and docs are kept local (not part of the
+# code-only release).
+/data/
+/paper/
+/docs/
+/.archive/
+
+# Local editor / assistant config
+/.claude/
+
+# LaTeX build artifacts (safety net; paper/ is already ignored)
+*.aux
+*.log
+*.out
+*.dat
+*.toc
+*.fls
+*.fdb_latexmk
+*.synctex.gz
+
+# OS cruft
+Thumbs.db
+.DS_Store
