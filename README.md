@@ -63,10 +63,11 @@ Outputs (written to `data/`, not tracked by git): `results.csv` (one row per run
 
 ## Output columns
 
-`results.csv` has no header; each row is:
+`results.csv` opens with a header row written by the campaign script; the
+harness binary itself prints only data rows (one per run). Columns:
 
 ```
-sweep, workload, n, commit_hash, lambda, num_queries, blowup_factor,
+sweep, workload, n, commit_hash, lambda_bits, num_queries, blowup_factor,
 grinding_factor, field_extension, fri_folding_factor, threads, machine,
 run_index, t_native_ms, t_prove_ms, t_verify_ms, proof_bytes, security_bits
 ```
