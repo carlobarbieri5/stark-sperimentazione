@@ -38,9 +38,9 @@ The chain from raw measurements to the figures and tables is fully in-repository
    (`scaling.dat`, `queries.dat`, `digest.dat`, `grinding.dat`, `blowup.dat`) and the derived
    comparisons quoted in §4.4. Its output matches the `filecontents*` data blocks used by the
    paper figures.
-3. **Document.** The thesis (LaTeX source delivered separately, not tracked here) draws the
-   figures with pgfplots directly from those embedded data blocks; the generated figures it
-   produces are kept under `paper/figures/`.
+3. **Document.** The thesis LaTeX source (`paper/paper_full.tex`, tracked here; only the
+   compiled PDF is delivered separately) draws the figures with pgfplots directly from those
+   embedded data blocks; the generated figures it produces are kept under `paper/figures/`.
 
 During development the data passed through earlier drafts retained locally (e.g. an earlier
 `results_chapter.tex`, field-correction snippets, a draft `.docx`/`.pdf`); these intermediate
