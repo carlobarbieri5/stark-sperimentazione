@@ -29,7 +29,8 @@ and prints one CSV row per run to stdout. Swept parameters:
 | Repetitions | `--repetitions` | timed runs (1 warm-up always discarded) |
 
 `Rp64_256` is intentionally unsupported: it is an `f64`-only hash, incompatible
-with the `f128` AIR.
+with the `f128` AIR (the type error is reproduced by the `rp64_256_field_mismatch`
+example — see *Methodological probes* below).
 
 ## Build
 
@@ -58,8 +59,39 @@ collects the results into `data/`:
 pwsh scripts/run_campaign.ps1
 ```
 
-Outputs (written to `data/`, not tracked by git): `results.csv` (one row per run),
-`failures.csv` (errors/timeouts with reason), `run_log.txt`, `ENV.txt`.
+Outputs are written to `data/` and tracked in this repository: `results.csv` (one row per
+run), `failures.csv` (errors/timeouts with reason), `run_log.txt`, `ENV.txt`.
+
+## Analyse the raw data (medians / figures)
+
+`scripts/analyze.py` is the link between the raw `results.csv` and the published numbers: it
+computes the per-configuration medians / minima / maxima and re-derives the pgfplots data
+blocks (`scaling`, `queries`, `digest`, `grinding`, `blowup`) embedded in the paper, plus the
+derived comparisons quoted in §4.4. Pure standard library (no pandas):
+
+```sh
+python scripts/analyze.py
+```
+
+It writes `data/summary.csv` and `data/figures/*.dat`, and prints the blocks to stdout for a
+direct comparison against the paper's embedded figure data (the thesis document is delivered
+separately).
+
+## Methodological probes
+
+- **Trace-construction cost** (`examples/trace_cost.rs`): proving time `t_prove` excludes
+  trace construction (`build_trace` runs before the timer). This probe times `build_trace`
+  against `prove` on the light instances and writes `data/trace_cost.csv`; it shows trace
+  construction is a small, shrinking fraction of `prove`. Run: `cargo run --release --example
+  trace_cost`.
+- **Rp64_256 field mismatch** (`examples/rp64_256_field_mismatch.rs`): an intentionally
+  non-compiling example that reproduces the `f64`-vs-`f128` type error behind the Rp64_256
+  exclusion. Gated behind the `demo_broken` feature so it does not break normal builds. Run
+  `cargo build --example rp64_256_field_mismatch --features demo_broken`; the captured
+  compiler error is committed at `docs/rp64_256_compile_error.txt`.
+
+See `docs/REPRODUCIBILITY.md` for the exact campaign recipe and dataset checksums, and
+`docs/PROVENANCE.md` for the development history and the raw → published chain.
 
 ## Output columns
 
@@ -88,8 +120,9 @@ The Rescue AIR, prover, hash permutation and constraint helpers under
 `src/rescue/` and `src/utils.rs` are the Winterfell `examples/src/rescue` files
 at tag `v0.13.1`, copied verbatim or lightly adapted; they keep their original
 `Copyright (c) Facebook, Inc.` MIT headers. Original work in this repository:
-the measurement harness (`src/main.rs`) and the campaign orchestrator
-(`scripts/run_campaign.ps1`). See [LICENSE](LICENSE).
+the measurement harness (`src/main.rs`, `src/lib.rs`), the campaign orchestrator
+(`scripts/run_campaign.ps1`), the analysis script (`scripts/analyze.py`), and the
+methodological probes (`examples/`). See [LICENSE](LICENSE).
 
 ## License
 

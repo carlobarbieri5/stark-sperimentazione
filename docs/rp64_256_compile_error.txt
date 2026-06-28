@@ -1,0 +1,49 @@
+Rp64_256 field-incompatibility: captured compiler error
+========================================================
+
+This file documents, with the actual compiler output, why the arithmetization-friendly
+Rescue-Prime hash `Rp64_256` could NOT be benchmarked against the f128 workload AIR
+(paper, Section 4.5 "The arithmetization-friendly hash that could not be measured").
+
+Reproduce from the repository root:
+
+    cargo build --example rp64_256_field_mismatch --features demo_broken
+
+Source: examples/rp64_256_field_mismatch.rs
+Toolchain: rustc 1.96.0 (see data/ENV.txt), winterfell = "=0.13.1".
+
+The point: `Rp64_256` is defined only over the 64-bit Goldilocks field
+(`winter_math::fields::f64`), so its `ElementHasher::BaseField` is the f64 element type,
+whereas `RescueProver`'s `Prover` impl requires `BaseField = f128::BaseElement`. The
+type system rejects the combination -- this is the f64-vs-f128 mismatch, not a runtime
+failure. Verbatim compiler output (dependency "Compiling ..." progress lines elided):
+
+----------------------------------------------------------------------------------------
+error[E0599]: the method `prove` exists for struct `RescueProver<Rp64_256>`, but its trait bounds were not satisfied
+   --> examples\rp64_256_field_mismatch.rs:45:25
+    |
+ 45 |     let _proof = prover.prove(trace).expect("unreachable: this example never compiles");
+    |                         ^^^^^ method cannot be called on `RescueProver<Rp64_256>` due to unsatisfied trait bounds
+    |
+   ::: src\rescue\prover.rs:20:1
+    |
+ 20 | pub struct RescueProver<H: ElementHasher> {
+    | ----------------------------------------- doesn't satisfy `RescueProver<Rp64_256>: Prover`
+    |
+   ::: ...\winter-crypto-0.13.1\src\hash\rescue\rp64_256\mod.rs:116:1
+    |
+116 | pub struct Rp64_256();
+    | ------------------- doesn't satisfy `<_ as ElementHasher>::BaseField = BaseElement`
+    |
+    = note: the following trait bounds were not satisfied:
+            `<Rp64_256 as ElementHasher>::BaseField = winterfell::winter_math::fields::f128::BaseElement`
+            which is required by `RescueProver<Rp64_256>: Prover`
+
+For more information about this error, try `rustc --explain E0599`.
+error: could not compile `stark_campaign` (example "rp64_256_field_mismatch") due to 1 previous error
+----------------------------------------------------------------------------------------
+
+The binding line is the `note`:
+  <Rp64_256 as ElementHasher>::BaseField = f128::BaseElement   (required, not satisfied)
+i.e. an f64-only hasher cannot meet the f128 BaseField bound. This is logged once, by
+design, in data/failures.csv as the Rp64_256 row.

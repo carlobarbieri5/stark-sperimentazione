@@ -7,6 +7,16 @@ edition = "2021"
 name = "stark_campaign"
 path = "src/main.rs"
 
+# The Rp64_256 example is INTENTIONALLY non-compiling (it demonstrates the f64-vs-f128
+# type error described in the paper, Section 4.5). Gate it behind a feature so the default
+# build / `cargo build --examples` / `cargo test` are not broken by it.
+[features]
+demo_broken = []
+
+[[example]]
+name = "rp64_256_field_mismatch"
+required-features = ["demo_broken"]
+
 [dependencies]
 winterfell = { version = "=0.13.1", features = ["concurrent"] }
 clap = { version = "4", features = ["derive"] }

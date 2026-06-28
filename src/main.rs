@@ -17,10 +17,7 @@ use winterfell::{
     AcceptableOptions, BatchingMethod, FieldExtension, ProofOptions, Prover,
 };
 
-mod rescue;
-mod utils;
-
-use rescue::{PublicInputs, RescueAir, RescueProver};
+use stark_campaign::rescue::{self, PublicInputs, RescueAir, RescueProver};
 
 // Hash backends, monomorphized over the f128 base field of the AIR.
 type Blake3_256 = winterfell::crypto::hashers::Blake3_256<BaseElement>;

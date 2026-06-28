@@ -1,0 +1,105 @@
+﻿Campaign started 2026-06-02 14:48:07
+[2026-06-02 14:48:08] ENV captured -> ENV.txt
+[2026-06-02 14:48:08] Noted Rp64_256 exclusion in failures.csv
+[2026-06-02 14:48:08] Total configurations: 25  x 7 reps
+[2026-06-02 14:48:08] === [1/25] sweep=S2 n=65536 hash=blake3_256 q=32 blowup=8 grind=16 fe=none fold=8 threads=1 ===
+[2026-06-02 14:48:08] RUN  RAYON_NUM_THREADS=1 stark_campaign.exe --n 65536 --commit-hash blake3_256 --num-queries 32 --blowup-factor 8 --grinding-factor 16 --field-extension none --fri-folding-factor 8 --threads 1 --repetitions 7 --sweep S2 --machine laptop_ryzen7_7840u_32gb
+[2026-06-02 14:53:10] OK   301.7s  rows=7  (last security_bits/proof_bytes shown below)
+[2026-06-02 14:53:10]      S2,rescue_chain,65536,blake3_256,256,32,8,16,none,8,1,laptop_ryzen7_7840u_32gb,7,4505.481000,36707.477400,2.078000,101713,111
+[2026-06-02 14:53:10] === [2/25] sweep=S2 n=65536 hash=sha3_256 q=32 blowup=8 grind=16 fe=none fold=8 threads=1 ===
+[2026-06-02 14:53:10] RUN  RAYON_NUM_THREADS=1 stark_campaign.exe --n 65536 --commit-hash sha3_256 --num-queries 32 --blowup-factor 8 --grinding-factor 16 --field-extension none --fri-folding-factor 8 --threads 1 --repetitions 7 --sweep S2 --machine laptop_ryzen7_7840u_32gb
+[2026-06-02 15:01:09] OK   478.8s  rows=7  (last security_bits/proof_bytes shown below)
+[2026-06-02 15:01:09]      S2,rescue_chain,65536,sha3_256,256,32,8,16,none,8,1,laptop_ryzen7_7840u_32gb,7,5929.485700,49915.525100,3.173000,102452,111
+[2026-06-02 15:01:09] === [3/25] sweep=S3 n=65536 hash=blake3_256 q=32 blowup=8 grind=16 fe=none fold=8 threads=1 ===
+[2026-06-02 15:01:09] RUN  RAYON_NUM_THREADS=1 stark_campaign.exe --n 65536 --commit-hash blake3_256 --num-queries 32 --blowup-factor 8 --grinding-factor 16 --field-extension none --fri-folding-factor 8 --threads 1 --repetitions 7 --sweep S3 --machine laptop_ryzen7_7840u_32gb
+[2026-06-02 15:06:56] OK   346.7s  rows=7  (last security_bits/proof_bytes shown below)
+[2026-06-02 15:06:56]      S3,rescue_chain,65536,blake3_256,256,32,8,16,none,8,1,laptop_ryzen7_7840u_32gb,7,5496.937800,34086.197100,2.223300,101713,111
+[2026-06-02 15:06:56] === [4/25] sweep=S3 n=65536 hash=blake3_192 q=32 blowup=8 grind=16 fe=none fold=8 threads=1 ===
+[2026-06-02 15:06:56] RUN  RAYON_NUM_THREADS=1 stark_campaign.exe --n 65536 --commit-hash blake3_192 --num-queries 32 --blowup-factor 8 --grinding-factor 16 --field-extension none --fri-folding-factor 8 --threads 1 --repetitions 7 --sweep S3 --machine laptop_ryzen7_7840u_32gb
+[2026-06-02 15:12:47] OK   350.7s  rows=7  (last security_bits/proof_bytes shown below)
+[2026-06-02 15:12:47]      S3,rescue_chain,65536,blake3_192,192,32,8,16,none,8,1,laptop_ryzen7_7840u_32gb,7,5536.541800,34357.512600,1.823400,82305,96
+[2026-06-02 15:12:47] === [5/25] sweep=S4 n=65536 hash=blake3_256 q=16 blowup=8 grind=16 fe=none fold=8 threads=1 ===
+[2026-06-02 15:12:47] RUN  RAYON_NUM_THREADS=1 stark_campaign.exe --n 65536 --commit-hash blake3_256 --num-queries 16 --blowup-factor 8 --grinding-factor 16 --field-extension none --fri-folding-factor 8 --threads 1 --repetitions 7 --sweep S4 --machine laptop_ryzen7_7840u_32gb
+[2026-06-02 15:18:30] OK   343s  rows=7  (last security_bits/proof_bytes shown below)
+[2026-06-02 15:18:30]      S4,rescue_chain,65536,blake3_256,256,16,8,16,none,8,1,laptop_ryzen7_7840u_32gb,7,5507.266500,33754.900700,1.238400,55621,47
+[2026-06-02 15:18:30] === [6/25] sweep=S4 n=65536 hash=blake3_256 q=24 blowup=8 grind=16 fe=none fold=8 threads=1 ===
+[2026-06-02 15:18:30] RUN  RAYON_NUM_THREADS=1 stark_campaign.exe --n 65536 --commit-hash blake3_256 --num-queries 24 --blowup-factor 8 --grinding-factor 16 --field-extension none --fri-folding-factor 8 --threads 1 --repetitions 7 --sweep S4 --machine laptop_ryzen7_7840u_32gb
+[2026-06-02 15:24:12] OK   342.4s  rows=7  (last security_bits/proof_bytes shown below)
+[2026-06-02 15:24:12]      S4,rescue_chain,65536,blake3_256,256,24,8,16,none,8,1,laptop_ryzen7_7840u_32gb,7,5576.818700,33965.675900,1.213000,79676,71
+[2026-06-02 15:24:12] === [7/25] sweep=S4 n=65536 hash=blake3_256 q=32 blowup=8 grind=16 fe=none fold=8 threads=1 ===
+[2026-06-02 15:24:12] RUN  RAYON_NUM_THREADS=1 stark_campaign.exe --n 65536 --commit-hash blake3_256 --num-queries 32 --blowup-factor 8 --grinding-factor 16 --field-extension none --fri-folding-factor 8 --threads 1 --repetitions 7 --sweep S4 --machine laptop_ryzen7_7840u_32gb
+[2026-06-02 15:29:53] OK   340.9s  rows=7  (last security_bits/proof_bytes shown below)
+[2026-06-02 15:29:53]      S4,rescue_chain,65536,blake3_256,256,32,8,16,none,8,1,laptop_ryzen7_7840u_32gb,7,5497.913400,33675.410600,1.783900,101713,111
+[2026-06-02 15:29:53] === [8/25] sweep=S4 n=65536 hash=blake3_256 q=48 blowup=8 grind=16 fe=none fold=8 threads=1 ===
+[2026-06-02 15:29:53] RUN  RAYON_NUM_THREADS=1 stark_campaign.exe --n 65536 --commit-hash blake3_256 --num-queries 48 --blowup-factor 8 --grinding-factor 16 --field-extension none --fri-folding-factor 8 --threads 1 --repetitions 7 --sweep S4 --machine laptop_ryzen7_7840u_32gb
+[2026-06-02 15:36:21] OK   388.2s  rows=7  (last security_bits/proof_bytes shown below)
+[2026-06-02 15:36:21]      S4,rescue_chain,65536,blake3_256,256,48,8,16,none,8,1,laptop_ryzen7_7840u_32gb,7,5451.798400,36003.964100,3.042600,145659,127
+[2026-06-02 15:36:21] === [9/25] sweep=S4 n=65536 hash=blake3_256 q=64 blowup=8 grind=16 fe=none fold=8 threads=1 ===
+[2026-06-02 15:36:21] RUN  RAYON_NUM_THREADS=1 stark_campaign.exe --n 65536 --commit-hash blake3_256 --num-queries 64 --blowup-factor 8 --grinding-factor 16 --field-extension none --fri-folding-factor 8 --threads 1 --repetitions 7 --sweep S4 --machine laptop_ryzen7_7840u_32gb
+[2026-06-02 15:42:00] OK   339.1s  rows=7  (last security_bits/proof_bytes shown below)
+[2026-06-02 15:42:00]      S4,rescue_chain,65536,blake3_256,256,64,8,16,none,8,1,laptop_ryzen7_7840u_32gb,7,5765.427600,33562.599600,3.310100,187909,127
+[2026-06-02 15:42:00] === [10/25] sweep=S5 n=65536 hash=blake3_256 q=32 blowup=8 grind=0 fe=none fold=8 threads=1 ===
+[2026-06-02 15:42:00] RUN  RAYON_NUM_THREADS=1 stark_campaign.exe --n 65536 --commit-hash blake3_256 --num-queries 32 --blowup-factor 8 --grinding-factor 0 --field-extension none --fri-folding-factor 8 --threads 1 --repetitions 7 --sweep S5 --machine laptop_ryzen7_7840u_32gb
+[2026-06-02 15:47:39] OK   338.8s  rows=7  (last security_bits/proof_bytes shown below)
+[2026-06-02 15:47:39]      S5,rescue_chain,65536,blake3_256,256,32,8,0,none,8,1,laptop_ryzen7_7840u_32gb,7,5505.146700,33565.364800,2.200500,101267,95
+[2026-06-02 15:47:39] === [11/25] sweep=S5 n=65536 hash=blake3_256 q=32 blowup=8 grind=8 fe=none fold=8 threads=1 ===
+[2026-06-02 15:47:39] RUN  RAYON_NUM_THREADS=1 stark_campaign.exe --n 65536 --commit-hash blake3_256 --num-queries 32 --blowup-factor 8 --grinding-factor 8 --field-extension none --fri-folding-factor 8 --threads 1 --repetitions 7 --sweep S5 --machine laptop_ryzen7_7840u_32gb
+[2026-06-02 15:53:21] OK   341.8s  rows=7  (last security_bits/proof_bytes shown below)
+[2026-06-02 15:53:21]      S5,rescue_chain,65536,blake3_256,256,32,8,8,none,8,1,laptop_ryzen7_7840u_32gb,7,5471.043700,33798.003400,1.728800,102485,103
+[2026-06-02 15:53:21] === [12/25] sweep=S5 n=65536 hash=blake3_256 q=32 blowup=8 grind=16 fe=none fold=8 threads=1 ===
+[2026-06-02 15:53:21] RUN  RAYON_NUM_THREADS=1 stark_campaign.exe --n 65536 --commit-hash blake3_256 --num-queries 32 --blowup-factor 8 --grinding-factor 16 --field-extension none --fri-folding-factor 8 --threads 1 --repetitions 7 --sweep S5 --machine laptop_ryzen7_7840u_32gb
+[2026-06-02 15:59:00] OK   338.8s  rows=7  (last security_bits/proof_bytes shown below)
+[2026-06-02 15:59:00]      S5,rescue_chain,65536,blake3_256,256,32,8,16,none,8,1,laptop_ryzen7_7840u_32gb,7,5502.322200,33148.007300,2.228000,101713,111
+[2026-06-02 15:59:00] === [13/25] sweep=S5 n=65536 hash=blake3_256 q=32 blowup=8 grind=24 fe=none fold=8 threads=1 ===
+[2026-06-02 15:59:00] RUN  RAYON_NUM_THREADS=1 stark_campaign.exe --n 65536 --commit-hash blake3_256 --num-queries 32 --blowup-factor 8 --grinding-factor 24 --field-extension none --fri-folding-factor 8 --threads 1 --repetitions 7 --sweep S5 --machine laptop_ryzen7_7840u_32gb
+[2026-06-02 16:04:38] OK   337.9s  rows=7  (last security_bits/proof_bytes shown below)
+[2026-06-02 16:04:38]      S5,rescue_chain,65536,blake3_256,256,32,8,24,none,8,1,laptop_ryzen7_7840u_32gb,7,5275.741800,33344.678700,2.183800,102354,119
+[2026-06-02 16:04:38] === [14/25] sweep=S5 n=65536 hash=blake3_256 q=32 blowup=8 grind=32 fe=none fold=8 threads=1 ===
+[2026-06-02 16:04:38] RUN  RAYON_NUM_THREADS=1 stark_campaign.exe --n 65536 --commit-hash blake3_256 --num-queries 32 --blowup-factor 8 --grinding-factor 32 --field-extension none --fri-folding-factor 8 --threads 1 --repetitions 7 --sweep S5 --machine laptop_ryzen7_7840u_32gb
+[2026-06-02 16:34:00] OK   1761.8s  rows=7  (last security_bits/proof_bytes shown below)
+[2026-06-02 16:34:00]      S5,rescue_chain,65536,blake3_256,256,32,8,32,none,8,1,laptop_ryzen7_7840u_32gb,7,5266.088500,194054.897200,2.302400,102836,127
+[2026-06-02 16:34:00] === [15/25] sweep=S6 n=65536 hash=blake3_256 q=32 blowup=4 grind=16 fe=none fold=8 threads=1 ===
+[2026-06-02 16:34:00] RUN  RAYON_NUM_THREADS=1 stark_campaign.exe --n 65536 --commit-hash blake3_256 --num-queries 32 --blowup-factor 4 --grinding-factor 16 --field-extension none --fri-folding-factor 8 --threads 1 --repetitions 7 --sweep S6 --machine laptop_ryzen7_7840u_32gb
+[2026-06-02 16:37:56] OK   236.6s  rows=7  (last security_bits/proof_bytes shown below)
+[2026-06-02 16:37:56]      S6,rescue_chain,65536,blake3_256,256,32,4,16,none,8,1,laptop_ryzen7_7840u_32gb,7,5259.565700,21994.860800,2.496100,93486,63
+[2026-06-02 16:37:57] === [16/25] sweep=S6 n=65536 hash=blake3_256 q=32 blowup=8 grind=16 fe=none fold=8 threads=1 ===
+[2026-06-02 16:37:57] RUN  RAYON_NUM_THREADS=1 stark_campaign.exe --n 65536 --commit-hash blake3_256 --num-queries 32 --blowup-factor 8 --grinding-factor 16 --field-extension none --fri-folding-factor 8 --threads 1 --repetitions 7 --sweep S6 --machine laptop_ryzen7_7840u_32gb
+[2026-06-02 16:43:41] OK   344s  rows=7  (last security_bits/proof_bytes shown below)
+[2026-06-02 16:43:41]      S6,rescue_chain,65536,blake3_256,256,32,8,16,none,8,1,laptop_ryzen7_7840u_32gb,7,5685.321100,33712.723200,1.674500,101713,111
+[2026-06-02 16:43:41] === [17/25] sweep=S6 n=65536 hash=blake3_256 q=32 blowup=16 grind=16 fe=none fold=8 threads=1 ===
+[2026-06-02 16:43:41] RUN  RAYON_NUM_THREADS=1 stark_campaign.exe --n 65536 --commit-hash blake3_256 --num-queries 32 --blowup-factor 16 --grinding-factor 16 --field-extension none --fri-folding-factor 8 --threads 1 --repetitions 7 --sweep S6 --machine laptop_ryzen7_7840u_32gb
+[2026-06-02 16:53:05] OK   564.5s  rows=7  (last security_bits/proof_bytes shown below)
+[2026-06-02 16:53:05]      S6,rescue_chain,65536,blake3_256,256,32,16,16,none,8,1,laptop_ryzen7_7840u_32gb,7,5522.319900,61543.926800,1.717400,109459,127
+[2026-06-02 16:53:05] === [18/25] sweep=S6 n=65536 hash=blake3_256 q=32 blowup=8 grind=16 fe=quad fold=8 threads=1 ===
+[2026-06-02 16:53:05] RUN  RAYON_NUM_THREADS=1 stark_campaign.exe --n 65536 --commit-hash blake3_256 --num-queries 32 --blowup-factor 8 --grinding-factor 16 --field-extension quad --fri-folding-factor 8 --threads 1 --repetitions 7 --sweep S6 --machine laptop_ryzen7_7840u_32gb
+[2026-06-02 16:59:27] OK   381.4s  rows=7  (last security_bits/proof_bytes shown below)
+[2026-06-02 16:59:27]      S6,rescue_chain,65536,blake3_256,256,32,8,16,quad,8,1,laptop_ryzen7_7840u_32gb,7,5634.314600,39109.214700,4.264400,124817,111
+[2026-06-02 16:59:27] === [19/25] sweep=MT n=65536 hash=blake3_256 q=32 blowup=8 grind=16 fe=none fold=8 threads=16 ===
+[2026-06-02 16:59:27] RUN  RAYON_NUM_THREADS=16 stark_campaign.exe --n 65536 --commit-hash blake3_256 --num-queries 32 --blowup-factor 8 --grinding-factor 16 --field-extension none --fri-folding-factor 8 --threads 16 --repetitions 7 --sweep MT --machine laptop_ryzen7_7840u_32gb
+[2026-06-02 17:01:19] OK   112.6s  rows=7  (last security_bits/proof_bytes shown below)
+[2026-06-02 17:01:19]      MT,rescue_chain,65536,blake3_256,256,32,8,16,none,8,16,laptop_ryzen7_7840u_32gb,7,5484.978300,5027.273000,1.533300,101364,111
+[2026-06-02 17:01:19] === [20/25] sweep=S1 n=1024 hash=blake3_256 q=32 blowup=8 grind=16 fe=none fold=8 threads=1 ===
+[2026-06-02 17:01:19] RUN  RAYON_NUM_THREADS=1 stark_campaign.exe --n 1024 --commit-hash blake3_256 --num-queries 32 --blowup-factor 8 --grinding-factor 16 --field-extension none --fri-folding-factor 8 --threads 1 --repetitions 7 --sweep S1 --machine laptop_ryzen7_7840u_32gb
+[2026-06-02 17:01:22] OK   2.9s  rows=7  (last security_bits/proof_bytes shown below)
+[2026-06-02 17:01:22]      S1,rescue_chain,1024,blake3_256,256,32,8,16,none,8,1,laptop_ryzen7_7840u_32gb,7,69.300700,266.194800,0.600900,55867,111
+[2026-06-02 17:01:22] === [21/25] sweep=S1 n=4096 hash=blake3_256 q=32 blowup=8 grind=16 fe=none fold=8 threads=1 ===
+[2026-06-02 17:01:22] RUN  RAYON_NUM_THREADS=1 stark_campaign.exe --n 4096 --commit-hash blake3_256 --num-queries 32 --blowup-factor 8 --grinding-factor 16 --field-extension none --fri-folding-factor 8 --threads 1 --repetitions 7 --sweep S1 --machine laptop_ryzen7_7840u_32gb
+[2026-06-02 17:01:41] OK   19s  rows=7  (last security_bits/proof_bytes shown below)
+[2026-06-02 17:01:41]      S1,rescue_chain,4096,blake3_256,256,32,8,16,none,8,1,laptop_ryzen7_7840u_32gb,7,289.505100,1771.605500,1.254800,70464,111
+[2026-06-02 17:01:41] === [22/25] sweep=S1 n=16384 hash=blake3_256 q=32 blowup=8 grind=16 fe=none fold=8 threads=1 ===
+[2026-06-02 17:01:41] RUN  RAYON_NUM_THREADS=1 stark_campaign.exe --n 16384 --commit-hash blake3_256 --num-queries 32 --blowup-factor 8 --grinding-factor 16 --field-extension none --fri-folding-factor 8 --threads 1 --repetitions 7 --sweep S1 --machine laptop_ryzen7_7840u_32gb
+[2026-06-02 17:02:59] OK   78s  rows=7  (last security_bits/proof_bytes shown below)
+[2026-06-02 17:02:59]      S1,rescue_chain,16384,blake3_256,256,32,8,16,none,8,1,laptop_ryzen7_7840u_32gb,7,1100.171200,7773.391200,1.497600,85540,111
+[2026-06-02 17:02:59] === [23/25] sweep=S1 n=65536 hash=blake3_256 q=32 blowup=8 grind=16 fe=none fold=8 threads=1 ===
+[2026-06-02 17:02:59] RUN  RAYON_NUM_THREADS=1 stark_campaign.exe --n 65536 --commit-hash blake3_256 --num-queries 32 --blowup-factor 8 --grinding-factor 16 --field-extension none --fri-folding-factor 8 --threads 1 --repetitions 7 --sweep S1 --machine laptop_ryzen7_7840u_32gb
+[2026-06-02 17:08:43] OK   343.9s  rows=7  (last security_bits/proof_bytes shown below)
+[2026-06-02 17:08:43]      S1,rescue_chain,65536,blake3_256,256,32,8,16,none,8,1,laptop_ryzen7_7840u_32gb,7,5480.937200,35694.070500,2.039700,101713,111
+[2026-06-02 17:08:43] === [24/25] sweep=S1 n=262144 hash=blake3_256 q=32 blowup=8 grind=16 fe=none fold=8 threads=1 ===
+[2026-06-02 17:08:43] RUN  RAYON_NUM_THREADS=1 stark_campaign.exe --n 262144 --commit-hash blake3_256 --num-queries 32 --blowup-factor 8 --grinding-factor 16 --field-extension none --fri-folding-factor 8 --threads 1 --repetitions 7 --sweep S1 --machine laptop_ryzen7_7840u_32gb
+[2026-06-02 17:32:58] OK   1454.2s  rows=7  (last security_bits/proof_bytes shown below)
+[2026-06-02 17:32:58]      S1,rescue_chain,262144,blake3_256,256,32,8,16,none,8,1,laptop_ryzen7_7840u_32gb,7,30674.830300,139597.839300,1.948200,121686,111
+[2026-06-02 17:32:58] === [25/25] sweep=S1 n=1048576 hash=blake3_256 q=32 blowup=8 grind=16 fe=none fold=8 threads=1 ===
+[2026-06-02 17:32:58] RUN  RAYON_NUM_THREADS=1 stark_campaign.exe --n 1048576 --commit-hash blake3_256 --num-queries 32 --blowup-factor 8 --grinding-factor 16 --field-extension none --fri-folding-factor 8 --threads 1 --repetitions 7 --sweep S1 --machine laptop_ryzen7_7840u_32gb
+[2026-06-02 21:25:24] OK   13945.6s  rows=7  (last security_bits/proof_bytes shown below)
+[2026-06-02 21:25:24]      S1,rescue_chain,1048576,blake3_256,256,32,8,16,none,8,1,laptop_ryzen7_7840u_32gb,7,125746.776000,2696473.426500,6.585500,141435,111
+[2026-06-02 21:25:24] Campaign finished. results.csv data rows: 175

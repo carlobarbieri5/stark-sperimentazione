@@ -1,0 +1,2 @@
+sweep,n,commit_hash,num_queries,blowup_factor,grinding_factor,field_extension,fri_folding_factor,threads,reason
+S2,65536,rp64_256,32,8,16,none,8,1,Rp64_256 is f64-only; stock rescue AIR is f128 - incompatible (excluded by design)

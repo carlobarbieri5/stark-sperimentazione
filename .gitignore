@@ -1,12 +1,15 @@
 # Rust build output
 /target
 
-# Project data, paper sources and docs are kept local (not part of the
-# code-only release).
-/data/
-/paper/
-/docs/
+# data/ is tracked (raw data); paper/ tracks the LaTeX source and figures (only the compiled
+# PDF is kept local); docs/ tracks the provenance/reproducibility notes. Artifacts ignored below.
 /.archive/
+
+# Publish the thesis LaTeX source; keep only the compiled PDF local.
+/paper/*.pdf
+
+# Internal methods report kept local (superseded by docs/REPRODUCIBILITY.md).
+/docs/REPORT.md
 
 # Local editor / assistant config
 /.claude/
